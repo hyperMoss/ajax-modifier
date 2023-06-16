@@ -17,7 +17,7 @@ export default defineManifest(async (env) => {
     },
     devtools_page: "devtools.html",
     background: {
-      service_worker: "src/background.ts",
+      service_worker: "background.js",
       type: "module",
     },
     host_permissions: ["*://*/*"],
@@ -45,7 +45,8 @@ export default defineManifest(async (env) => {
       {
         "resources": [
           "main.js",
-          "iframe.html"
+          "iframe.html",
+          "devtools.js"
         ],
         "matches": [
           "<all_urls>"
