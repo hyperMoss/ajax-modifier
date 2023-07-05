@@ -135,7 +135,8 @@ function App() {
       switchOn: true,
       key: buildUUID(),
     });
-    forceUpdate(updateAddBtnTop_interval);
+    forceUpdate();
+    updateAddBtnTop_interval();
   };
 
   const handleClickRemove = (e, i) => {
@@ -147,6 +148,7 @@ function App() {
       ...window.setting.ajaxInterceptor_rules.slice(0, i),
       ...window.setting.ajaxInterceptor_rules.slice(i + 1),
     ];
+    forceUpdate();
     set('ajaxInterceptor_rules', window.setting.ajaxInterceptor_rules);
 
     delete interceptedRequests[match];
